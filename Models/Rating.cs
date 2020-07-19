@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OMDB_API.Models
 {
-    class Rating
+    public class Rating
     {
         public string Source { get; set; }
         public string Value { get; set; }

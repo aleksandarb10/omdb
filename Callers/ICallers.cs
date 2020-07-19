@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
-using WindowsFormsApp1.Models;
+﻿using OMDB_API.Models;
+using System.Collections.Generic;
 
 namespace OMDB_API.Callers
 {
-    interface ICallers
+    public interface ICallers
     {
+        MovieSearch GetMovies(string Title, int Page);
+        Movie GetMovie(string Title);
+
+
     }
 }

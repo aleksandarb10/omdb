@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace OMDB_API
 {
     partial class DetailedView
     {
@@ -50,7 +50,7 @@
             // 
             // groupBoxDetailed
             // 
-            this.groupBoxDetailed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBoxDetailed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBoxDetailed.Controls.Add(this.richTextBoxPlot);
             this.groupBoxDetailed.Controls.Add(this.richTextBoxRatings);
@@ -75,8 +75,8 @@
             // 
             // richTextBoxPlot
             // 
-            this.richTextBoxPlot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.richTextBoxPlot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxPlot.Location = new System.Drawing.Point(3, 533);
             this.richTextBoxPlot.Name = "richTextBoxPlot";
@@ -89,7 +89,7 @@
             // 
             this.richTextBoxRatings.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBoxRatings.Enabled = false;
-            this.richTextBoxRatings.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.richTextBoxRatings.ForeColor = System.Drawing.SystemColors.WindowText;
             this.richTextBoxRatings.Location = new System.Drawing.Point(3, 453);
             this.richTextBoxRatings.Name = "richTextBoxRatings";
             this.richTextBoxRatings.Size = new System.Drawing.Size(536, 69);
@@ -203,8 +203,8 @@
             // 
             // pictureBoxDetailed
             // 
-            this.pictureBoxDetailed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBoxDetailed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxDetailed.Location = new System.Drawing.Point(551, 12);
             this.pictureBoxDetailed.Name = "pictureBoxDetailed";
@@ -212,7 +212,6 @@
             this.pictureBoxDetailed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxDetailed.TabIndex = 1;
             this.pictureBoxDetailed.TabStop = false;
-            this.pictureBoxDetailed.Click += new System.EventHandler(this.pictureBoxDetailed_Click);
             // 
             // DetailedView
             // 
@@ -223,7 +222,6 @@
             this.Controls.Add(this.groupBoxDetailed);
             this.Name = "DetailedView";
             this.Text = "DetailedView";
-            this.Load += new System.EventHandler(this.DetailedView_Load);
             this.groupBoxDetailed.ResumeLayout(false);
             this.groupBoxDetailed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDetailed)).EndInit();
@@ -234,20 +232,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxDetailed;
-        private System.Windows.Forms.PictureBox pictureBoxDetailed;
-        private System.Windows.Forms.TextBox textBoxTitleYear;
-        private System.Windows.Forms.TextBox textBoxGenre;
-        private System.Windows.Forms.RichTextBox richTextBoxInfo;
-        private System.Windows.Forms.TextBox textBoxRating;
-        private System.Windows.Forms.TextBox textBoxCountry;
-        private System.Windows.Forms.TextBox textBoxLanguage;
-        private System.Windows.Forms.TextBox textBoxAwards;
-        private System.Windows.Forms.TextBox textBoxType;
-        private System.Windows.Forms.TextBox textBoxMetascore;
-        private System.Windows.Forms.TextBox textBoxDVD;
-        private System.Windows.Forms.TextBox textBoxWebsite;
-        private System.Windows.Forms.TextBox textBoxBoxOffice;
-        private System.Windows.Forms.RichTextBox richTextBoxPlot;
-        private System.Windows.Forms.RichTextBox richTextBoxRatings;
+        public System.Windows.Forms.TextBox textBoxTitleYear;
+        public System.Windows.Forms.PictureBox pictureBoxDetailed;
+        public System.Windows.Forms.TextBox textBoxGenre;
+        public System.Windows.Forms.RichTextBox richTextBoxInfo;
+        public System.Windows.Forms.TextBox textBoxRating;
+        public System.Windows.Forms.TextBox textBoxCountry;
+        public System.Windows.Forms.TextBox textBoxLanguage;
+        public System.Windows.Forms.TextBox textBoxAwards;
+        public System.Windows.Forms.TextBox textBoxType;
+        public System.Windows.Forms.TextBox textBoxMetascore;
+        public System.Windows.Forms.TextBox textBoxDVD;
+        public System.Windows.Forms.TextBox textBoxWebsite;
+        public System.Windows.Forms.TextBox textBoxBoxOffice;
+        public System.Windows.Forms.RichTextBox richTextBoxPlot;
+        public System.Windows.Forms.RichTextBox richTextBoxRatings;
     }
 }

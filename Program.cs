@@ -4,13 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RestSharp;
-using WindowsFormsApp1.Callers;
-using WindowsFormsApp1.Models;
+using OMDB_API.Models;
 using OMDB_API.Callers;
 //using RestSharpDemo.Caller.Callers;
 //using RestSharpDemo.Caller.Models;
 
-namespace WindowsFormsApp1
+namespace OMDB_API
 {
     static class Program
     {

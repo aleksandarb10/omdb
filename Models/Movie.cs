@@ -2,9 +2,9 @@
 using OMDB_API.Models;
 using System.Collections.Generic;
 
-namespace WindowsFormsApp1.Models
+namespace OMDB_API.Models
 {
-    class Movie
+    public class Movie
     {
         public string imdbID { get; set; }
         public string Title { get; set; }

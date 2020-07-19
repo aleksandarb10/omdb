@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormsApp1.Models;
+using OMDB_API.Models;
 
 namespace OMDB_API.Models
 {
-    class MovieSearch
+   public class MovieSearch
     {
 
         public List<Movie> Search { get; set; }

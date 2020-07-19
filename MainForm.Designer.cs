@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace OMDB_API
 {
     partial class OMDb
     {
@@ -47,12 +47,18 @@
             this.contextMenuStripOption = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sORT1ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sORT2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addToFavoritesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupSearch = new System.Windows.Forms.GroupBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.tabFavorites = new System.Windows.Forms.TabPage();
             this.listBoxFavorites = new System.Windows.Forms.ListBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.progressBarAddingMovies = new System.Windows.Forms.ProgressBar();
+            this.buttonDownloadPoster = new System.Windows.Forms.Button();
+            this.buttonBrowse = new System.Windows.Forms.Button();
+            this.listBoxWatchedMovies = new System.Windows.Forms.ListBox();
             this.sORT1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sORT2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToFavoritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +70,7 @@
             this.contextMenuStripOption.SuspendLayout();
             this.groupSearch.SuspendLayout();
             this.tabFavorites.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Tab_Control
@@ -73,6 +80,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Tab_Control.Controls.Add(this.tabMovies);
             this.Tab_Control.Controls.Add(this.tabFavorites);
+            this.Tab_Control.Controls.Add(this.tabPage1);
             this.Tab_Control.Location = new System.Drawing.Point(0, 0);
             this.Tab_Control.Name = "Tab_Control";
             this.Tab_Control.SelectedIndex = 0;
@@ -254,12 +262,14 @@
             this.contextMenuStripOption.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sORT1ToolStripMenuItem1,
             this.sORT2ToolStripMenuItem1,
+            this.toolStripSeparator1,
             this.addToFavoritesToolStripMenuItem1});
             this.contextMenuStripOption.Name = "contextMenuStripOption";
-            this.contextMenuStripOption.Size = new System.Drawing.Size(159, 74);
+            this.contextMenuStripOption.Size = new System.Drawing.Size(159, 80);
             // 
             // sORT1ToolStripMenuItem1
             // 
+            this.sORT1ToolStripMenuItem1.CheckOnClick = true;
             this.sORT1ToolStripMenuItem1.Name = "sORT1ToolStripMenuItem1";
             this.sORT1ToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
             this.sORT1ToolStripMenuItem1.Text = "SORT 1";
@@ -267,10 +277,16 @@
             // 
             // sORT2ToolStripMenuItem1
             // 
+            this.sORT2ToolStripMenuItem1.CheckOnClick = true;
             this.sORT2ToolStripMenuItem1.Name = "sORT2ToolStripMenuItem1";
             this.sORT2ToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
             this.sORT2ToolStripMenuItem1.Text = "SORT 2";
             this.sORT2ToolStripMenuItem1.Click += new System.EventHandler(this.sORT2ToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(155, 6);
             // 
             // addToFavoritesToolStripMenuItem1
             // 
@@ -333,6 +349,57 @@
             this.listBoxFavorites.Name = "listBoxFavorites";
             this.listBoxFavorites.Size = new System.Drawing.Size(637, 472);
             this.listBoxFavorites.TabIndex = 0;
+            this.listBoxFavorites.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxFavorites_SelectedDoubleClick);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.progressBarAddingMovies);
+            this.tabPage1.Controls.Add(this.buttonDownloadPoster);
+            this.tabPage1.Controls.Add(this.buttonBrowse);
+            this.tabPage1.Controls.Add(this.listBoxWatchedMovies);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(648, 488);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Watched Movies";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // progressBarAddingMovies
+            // 
+            this.progressBarAddingMovies.Location = new System.Drawing.Point(8, 451);
+            this.progressBarAddingMovies.Name = "progressBarAddingMovies";
+            this.progressBarAddingMovies.Size = new System.Drawing.Size(637, 23);
+            this.progressBarAddingMovies.TabIndex = 3;
+            // 
+            // buttonDownloadPoster
+            // 
+            this.buttonDownloadPoster.Enabled = false;
+            this.buttonDownloadPoster.Location = new System.Drawing.Point(499, 392);
+            this.buttonDownloadPoster.Name = "buttonDownloadPoster";
+            this.buttonDownloadPoster.Size = new System.Drawing.Size(125, 23);
+            this.buttonDownloadPoster.TabIndex = 2;
+            this.buttonDownloadPoster.Text = "Download Poster";
+            this.buttonDownloadPoster.UseVisualStyleBackColor = true;
+            this.buttonDownloadPoster.Click += new System.EventHandler(this.buttonDownloadPoster_Click);
+            // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.Location = new System.Drawing.Point(499, 349);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(125, 23);
+            this.buttonBrowse.TabIndex = 1;
+            this.buttonBrowse.Text = "Browse";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
+            // 
+            // listBoxWatchedMovies
+            // 
+            this.listBoxWatchedMovies.FormattingEnabled = true;
+            this.listBoxWatchedMovies.Location = new System.Drawing.Point(8, 12);
+            this.listBoxWatchedMovies.Name = "listBoxWatchedMovies";
+            this.listBoxWatchedMovies.Size = new System.Drawing.Size(462, 433);
+            this.listBoxWatchedMovies.TabIndex = 0;
+            this.listBoxWatchedMovies.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ShowDetail);
             // 
             // sORT1ToolStripMenuItem
             // 
@@ -355,12 +422,13 @@
             // 
             // OMDb
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 526);
             this.Controls.Add(this.Tab_Control);
             this.Name = "OMDb";
-            this.Text = "OMDb";
+            this.Text = "OmdbAPI";
             this.Tab_Control.ResumeLayout(false);
             this.tabMovies.ResumeLayout(false);
             this.groupBoxDeatails.ResumeLayout(false);
@@ -372,6 +440,7 @@
             this.groupSearch.ResumeLayout(false);
             this.groupSearch.PerformLayout();
             this.tabFavorites.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -405,6 +474,12 @@
         private System.Windows.Forms.ToolStripMenuItem sORT1ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sORT2ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addToFavoritesToolStripMenuItem1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button buttonDownloadPoster;
+        private System.Windows.Forms.Button buttonBrowse;
+        private System.Windows.Forms.ListBox listBoxWatchedMovies;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ProgressBar progressBarAddingMovies;
     }
 }
 
