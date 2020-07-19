@@ -227,7 +227,6 @@ namespace WindowsFormsApp1
             Movie newItem = (Movie)listBoxSearchResults.SelectedItem;
                 TextWriter txt = new StreamWriter("..\\..\\Data\\Data.txt", true);
             txt.Write(newItem.imdbID + ";" + newItem.Text + "\n" );
-            //txt.
             txt.Close();
 
 
